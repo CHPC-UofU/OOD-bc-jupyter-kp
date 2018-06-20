@@ -1,0 +1,11 @@
+batch_connect:
+  template: "basic"
+script:
+  native:
+    - "-N"
+    - "<%= bc_num_slots %>"
+    <%- if node_type != "any" -%>
+    - "-C"
+    - "<%= node_type %>"
+    <%- end -%>
+
