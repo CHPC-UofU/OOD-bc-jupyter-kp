@@ -11,6 +11,10 @@ cd "${HOME}"
 # Purge the module environment to avoid conflicts
 module purge
 
+# Workaround for directory permission error
+unset XDG_RUNTIME_DIR
+#export XDG_RUNTIME_DIR=""
+
 # Load the require modules
 module load <%= context.modules %>
 <%- end -%>
