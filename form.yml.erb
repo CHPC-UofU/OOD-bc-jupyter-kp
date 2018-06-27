@@ -1,3 +1,6 @@
+<%-
+  queues = OodAppkit.clusters[:scrubpeak].custom_config[:queues]
+-%>
 ---
 cluster: "scrubpeak"
 attributes:
@@ -17,20 +20,23 @@ attributes:
 
   bc_num_slots:
     widget: "number_field"
-    label: "Number of cores"
+    label: "Number of tasks"
     value: 1
-    help: |
-      Number of cores on node type. Leave blank if requesting full node.
+    help: "Number of cores on node type."
     min: 1
     max: 8
     step: 1
   bc_account:
     label: "Account"
-    help: "If left blank default account will be used"
-  bc_queue:
+    help: "If left blank default account will be used."
+  custom_queue:
     label: "Partition"
-    value: "scrubpeak"
-    help: "If left blank default partition will be used"
+    help: "Please select a queue from the drop-down."
+    widget: select
+    options:
+    <%- queues.each do |q| -%>
+      - [ "<%= q %>", "<%= q %>" ]
+    <%- end -%>
   node_type:
     widget: select
     label: "Node type"
@@ -50,6 +56,6 @@ form:
   - bc_num_slots
   - bc_num_hours
   - bc_account
-  - bc_queue
+  - custom_queue
   - node_type
   - bc_email_on_started
