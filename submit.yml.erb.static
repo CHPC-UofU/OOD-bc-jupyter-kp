@@ -1,0 +1,12 @@
+batch_connect:
+  template: "basic"
+script:
+  queue_name: <%= custom_queue %>
+  native:
+    - "-n"
+    - "<%= bc_num_slots %>"
+    <%- if node_type != "any" -%>
+    - "-C"
+    - "<%= node_type %>"
+    <%- end -%>
+
