@@ -1,7 +1,7 @@
 batch_connect:
   template: "basic"
 script:
-  queue_name: <%= custom_queue %>
+  queue_name: <%= custom_queue.blank? ? "null" : custom_queue.strip %>
   native:
     - "-n"
     - "<%= bc_num_slots %>"

@@ -1,10 +1,10 @@
 ---
-name: Jupyter Notebook
+name: Jupyter Notebook on Notchpeak
 category: Interactive Apps
 subcategory: Servers
 role: batch_connect
 description: |
-  This app will launch a [Jupyter Notebook] server using [Python] on the [Scrubpeak
+  This app will launch a [Jupyter Notebook] server using [Python] on the [Notchpeak
   cluster].
 
   [Jupyter Notebook]: https://jupyter.org/
