@@ -65,12 +65,18 @@ attributes:
     widget: select
     label: "Node type"
     help: |
-      - **any** - Chooses anyone of the available Notchpeak nodes.
+      - **any** - Chooses anyone of the available Kingspeak nodes.
         This reduces the wait time as you have no requirements.
-      - **32 core node** - Chooses 32 core Notchpeak nodes.
+      - **16 core node** - Chooses 16 core Kingspeak nodes.
+      - **20 core node** - Chooses 20 core Kingspeak nodes.
+      - **24 core node** - Chooses 24 core Kingspeak nodes.
+      - **28 core node** - Chooses 28 core Kingspeak nodes.
     options:
       - ["any node", "any"]
-      - ["32 core node", "c32"]
+      - ["16 core node", "c16"]
+      - ["20 core node", "c20"]
+      - ["24 core node", "c24"]
+      - ["28 core node", "c28"]
 form:
   - modules
   - bc_num_slots

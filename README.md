@@ -58,6 +58,7 @@ Again, you do not need to restart the app as it isn't a Passenger app.
 
 ## CHPC specifics
 
-This app is using the global static partition list as described in
-https://osc.github.io/ood-documentation/master/app-development/tutorials-interactive-apps/add-custom-queue/global-static-list.html
+This app is using the local dynamic partition list as described in https://osc.github.io/ood-documentation/master/app-development/tutorials-interactive-apps/add-custom-queue/local-dynamic-list.html
+
+Since our available partitions, apart from the partitions named the same as the cluster, also include partitions owned by PI, which are named the same as their group name (most of the time), we get the available partition list by grepping the sinfo output for the required keywords (in this case "kingspeak" and all the Linux groups the user is in). Thus the more compilcated "cmd" command in form.yml.erb.
 
